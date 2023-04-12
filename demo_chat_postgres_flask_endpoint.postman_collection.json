@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "7bbffcf9-9d5a-4c85-92a9-8e33f4204fe6",
+		"name": "demo_chat_postgres_flask_endpoint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26836119"
+	},
+	"item": [
+		{
+			"name": "GetAllChatHistory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/companion/399dce28-29a2-4b9e-8431-db2fc2f10797",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"companion",
+						"399dce28-29a2-4b9e-8431-db2fc2f10797"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddChatHIstory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"session_id\":\"bde7a159-7f0b-6754-jj90-b3bd0c79504d\",\n    \"created_at\":\"2023-04-11\",\n    \"chat\": {\n        \"messages\": [\n        {\n            \"timestamp\": \"2023-04-11T12:35:10Z\",\n            \"sender\": \"user\",\n            \"content\": \"Hello chat!\"\n        },\n        {\n            \"timestamp\": \"2023-04-11T12:35:15Z\",\n            \"sender\": \"assistant\",\n            \"content\": \"How is going your day?\"\n        },\n        {\n            \"timestamp\": \"2023-04-11T12:36:22Z\",\n            \"sender\": \"user\",\n            \"content\": \"Excelent, I rellay need a Google Drive tutorial to create, update and share a csv\"\n        },\n        {\n            \"timestamp\": \"2023-04-11T12:36:30Z\",\n            \"sender\": \"assistant\",\n            \"content\": \"Sure, let me help you with that....\"\n        }\n    ]\n    }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/companion/add",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"companion",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSessionIdChatHistory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/companion/399dce28-29a2-4b9e-8431-db2fc2f10797",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"companion",
+						"399dce28-29a2-4b9e-8431-db2fc2f10797"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
