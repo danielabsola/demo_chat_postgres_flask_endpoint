@@ -30,10 +30,10 @@ def get_session_id_chat_history_companion(session_id):
 @main.route('/add', methods=['POST'])
 def add_chat_history_companion():
     try:
+        session_id = request.json['session_id']
         chat = request.json['chat']
         created_at = request.json['created_at']
-        session_id = uuid.uuid4()
-        chatHistory = ChatHistory(str(session_id), created_at, chat)
+        chatHistory = ChatHistory(session_id, created_at, chat)
 
         affected_rows = ChatHistoryCompanionModel.add_chat_history_companion(chatHistory)
         if affected_rows == 1:
