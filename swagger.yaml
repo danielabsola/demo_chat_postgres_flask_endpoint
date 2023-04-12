@@ -1,0 +1,86 @@
+# https://editor.swagger.io/
+openapi: "3.0.0"
+info:
+  title: "API Chat history companion"
+  description: "API REST to handler chat history."
+  version: "1.0.0"
+
+servers:
+  - url: "http://127.0.0.1:5000/api"
+
+paths:
+  /companion/:
+    get:
+      summary: "Get chat history"
+      description: "Returns a list of all chats history."
+      responses:
+        200:
+          description: "Chats list"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/ChatHistory"
+
+    post:
+      summary: "Insert movie"
+      description: "Create a new movie."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChatHistory"
+      responses:
+        201:
+          description: "Movie created successfully"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChatHistory"
+
+  /companion/{session_id}:
+    get:
+      summary: "Get chat history by session_id"
+      description: "Returns a chat list by session_id."
+      parameters:
+        - $ref: "#/components/parameters/session_id"
+      responses:
+        200:
+          description: "Chat history found it"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChatHistory"
+        404:
+          description: "Chat history not found it"
+
+
+components:
+
+  parameters: 
+    session_id:
+      name: "session_id"
+      description: "Session ID"
+      in: "path"
+      required: true
+      schema:
+        type: "string"
+      
+  schemas:
+    ChatHistory:
+      type: "object"
+      properties:
+        session_id:
+          type: "string"
+          description: "Session ID"
+        created_at:
+          type: "string"
+          description: "Date Created"
+        chat:
+          type: "array"
+          description: "Chat history"
+          items:
+            type: "object"
+            additionalProperties: true

@@ -5,7 +5,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent.parent.resolve()))
 # Routes
-from routes import movie
+from routes import chat_history_companion
 # Config
 from config import config
 
@@ -20,7 +20,7 @@ def page_not_found(error):
 if __name__ == '__main__':
     app.config.from_object(config['development'])
     #Blueprints
-    app.register_blueprint(movie.main, url_prefix='/api/movies')
+    app.register_blueprint(chat_history_companion.main, url_prefix='/api/companion')
     # Error handlers
     app.register_error_handler(404, page_not_found)
     app.run()
