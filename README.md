@@ -24,12 +24,13 @@ git clone https://github.com/danielabsola/demo_chat_postgres_flask_endpoint.git
 
 2. (Optional) Create a virtual environment and activate it:
 
-virtualenv venv
-source venv/bin/activate
+virtualenv venv2
+source venv2/bin/activate
 
 
 3. Install the required Python packages:
 
+pip install -r requirements.txt
 
 4. Set up the PostgreSQL database:
 
