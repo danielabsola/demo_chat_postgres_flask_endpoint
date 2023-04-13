@@ -39,15 +39,6 @@ source venv/bin/activate
 
 5. Run the Flask application:
 
-
-4. Set up the PostgreSQL database:
-
-- Create a new PostgreSQL database and user.
-- Update the `.env` file with your database credentials.
-- Import the table from the `chat_history_companion.sql` file.
-
-5. Run the Flask application:
-
 app.py
 
 
