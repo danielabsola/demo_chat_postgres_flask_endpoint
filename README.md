@@ -63,8 +63,10 @@ Este proyecto fue creado como práctica para conectar una API básica con una ba
 ## 😇 Autora
 
 **Daniela Sola**  
+[Gmail] dbshoy@gmail.com  
 [LinkedIn](https://www.linkedin.com/in/daniela-beatriz-sola-587b902b)  
-GitHub: [danielabsola](https://github.com/danielabsola)
+[GitHub](https://github.com/danielabsola)
+[Malt](https://www.malt.es/profile/danielabeatrizsola)
 
 ---
 
