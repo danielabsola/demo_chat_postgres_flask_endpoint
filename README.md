@@ -1,54 +1,72 @@
-# demo_chat_postgres_flask_endpoint
+# Demo: Chat + PostgreSQL + Flask Endpoint
 
-# Chat History Project
+Este repositorio contiene un demo simple de una API REST construida con **Flask**, que interactúa con una base de datos **PostgreSQL** para simular funcionalidades básicas de un sistema de chat.
 
-This project is designed to store and manage chat history using a PostgreSQL database and a Flask API. The API provides endpoints for storing and retrieving chat history based on session IDs.
+## 🚀 Tecnologías usadas
 
-## Getting Started
+- 🐍 Python (Flask)
+- 🐘 PostgreSQL
+- 🛆 SQLAlchemy
+- 📡 API REST (GET, POST)
+- 🧪 Postman (para pruebas de endpoints)
 
-These instructions will help you set up the project on your local machine for development and testing purposes.
+## 📁 Estructura del proyecto
 
-### Prerequisites
+```
+.
+├── app.py                # Archivo principal con endpoints Flask
+├── config.py             # Configuración de conexión a PostgreSQL
+├── models.py             # Definición de modelos con SQLAlchemy
+├── requirements.txt      # Dependencias del proyecto
+└── README.md             # Documentación del proyecto
+```
 
-- Python 3.6+
-- PostgreSQL
-- A PostgreSQL client (e.g., pgAdmin or DBeaver)
-- Virtualenv (optional, but recommended)
+## 📌 Funcionalidades
 
-### Installation
+- **GET /messages** → Retorna todos los mensajes almacenados en la base de datos.
+- **POST /messages** → Permite enviar un nuevo mensaje (usuario + contenido).
+- Conexión segura a base de datos con variables de entorno.
 
-1. Clone the repository:
+## 🔧 Cómo ejecutar localmente
 
-git clone https://github.com/danielabsola/demo_chat_postgres_flask_endpoint.git
+1. Cloná el repositorio:
+   ```bash
+   git clone https://github.com/danielabsola/demo_chat_postgres_flask_endpoint.git
+   cd demo_chat_postgres_flask_endpoint
+   ```
 
+2. Instalá las dependencias:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-2. (Optional) Create a virtual environment and activate it:
+3. Configurá tu conexión a PostgreSQL en un archivo `.env` o dentro de `config.py`:
+   ```
+   DB_HOST=localhost
+   DB_PORT=5432
+   DB_NAME=chatdb
+   DB_USER=usuario
+   DB_PASSWORD=contraseña
+   ```
 
-virtualenv venv2
-source venv2/bin/activate
+4. Ejecutá la aplicación:
+   ```bash
+   python app.py
+   ```
 
+5. Probá los endpoints con Postman, Insomnia o `curl`.
 
-3. Install the required Python packages:
+## 🧠 Aprendizajes y propósito
 
-pip install -r requirements.txt
+Este proyecto fue creado como práctica para conectar una API básica con una base de datos relacional y entender mejor cómo funcionan los endpoints REST, el manejo de formularios en Flask y la persistencia de datos.
 
-4. Set up the PostgreSQL database:
+## 😇 Autora
 
-- Create a new PostgreSQL database and user.
-- Update the `.env` file with your database credentials.
-- Import the demo table from the `demo_table.sql` file.
+**Daniela Sola**  
+[LinkedIn](https://www.linkedin.com/in/daniela-beatriz-sola-587b902b)  
+GitHub: [danielabsola](https://github.com/danielabsola)
 
-5. Run the Flask application:
+---
 
-app.py
-
-
-The API should now be running at `http://127.0.0.1:5000/api`.
-
-## API Endpoints
-
-- `GET /api/companion/`: Retrieve all chat history records.
-- `POST /api/companion/add`: Add a new chat history record.
-- `GET /api/companion/<session_id>`: Retrieve chat history records for a specific session ID.
-
-
+> Si este proyecto te resulta útil o interesante, ¡no olvides dejar una ⭐️!
+v
